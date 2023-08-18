@@ -244,6 +244,11 @@ class Client
         ];
     }
 
+	public function getRedirectUrl(): string
+	{
+		return $this->configs['redirect'];
+	}
+
     /**
      * Allow setting a token to switch "user"
      */

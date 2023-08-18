@@ -75,13 +75,12 @@ class Controller extends LaravelController
         Redirector $redirector,
         Request $request,
         QuickBooks $quickbooks,
-        UrlGenerator $url_generator,
     ): RedirectResponse {
         // TODO: Deal with exceptions
         $quickbooks->exchangeCodeForToken($request->get('code'), $request->get('realmId'));
 
         $request->session()->flash('success', 'Connected to QuickBooks');
 
-        return $redirector->intended($url_generator->route('quickbooks.connect'));
+        return $redirector->intended($quickbooks->getRedirectUrl());
     }
 }

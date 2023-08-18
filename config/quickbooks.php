@@ -75,6 +75,9 @@ return [
         'prefix' => 'quickbooks',
     ],
 
+    // Where to redirect to after successfully connecting.
+    'redirect' => 'quickbooks/connect',
+
     /*
     |--------------------------------------------------------------------------
     | Properties for control the "user" relationship in Token
